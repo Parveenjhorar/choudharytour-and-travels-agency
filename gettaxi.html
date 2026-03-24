@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Taxi - CHOUDHARY TOUR AND TRAVELS</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Leaflet Map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<style>
+
+.hero-taxi{
+background:linear-gradient(rgba(62,39,35,0.8),rgba(62,39,35,0.8)),
+url('https://images.unsplash.com/photo-1503376780353-7e6692767b70');
+background-size:cover;
+background-position:center;
+padding:100px 20px;
+color:white;
+text-align:center;
+}
+
+.booking-box{
+background:white;
+padding:30px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+max-width:600px;
+margin:40px auto;
+border-left:6px solid #6d4c41;
+}
+
+.booking-box input,
+.booking-box select,
+.booking-box textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+}
+
+#map{
+height:400px;
+margin:40px auto;
+max-width:900px;
+}
+
+.vehicle-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.vehicle-card{
+width:300px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+padding:20px;
+text-align:center;
+}
+
+.vehicle-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+a{
+color:white;
+text-decoration:none;
+}
+
+a:hover{
+color:#f5c16c;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
++(91)-6376219433 | 8810686662
+</div>
+
+<div class="navbar">
+<img src="images/logo.jpeg" class="logo">
+<div>
+<a href="index.html">Home</a>
+<a href="gettaxi.html" class="active">Get Taxi</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="contacts.html">Contact</a>
+</div>
+</div>
+
+<div class="hero-taxi">
+<h1>Book Your Taxi Now</h1>
+<p>Safe • Reliable • Affordable Cab Service</p>
+</div>
+
+<!-- BOOKING FORM -->
+<div class="booking-box">
+<h2 style="text-align:center;">Quick Booking</h2>
+
+<input type="text" id="name" placeholder="Your Name">
+<input type="text" id="number" placeholder="Contact Number">
+
+<!-- <input type="text" id="pickup" placeholder="Pickup Location" readonly>
+<input type="hidden" id="pickup_lat">
+<input type="hidden" id="pickup_lng">
+
+<input type="text" id="drop" placeholder="Drop Location" readonly>
+<input type="hidden" id="drop_lat">
+<input type="hidden" id="drop_lng"> -->
+<input type="text" id="pickup" placeholder="Enter Pickup Location">
+<input type="text" id="drop" placeholder="Enter Drop Location">
+<select id="vehicle">
+<option>Select Vehicle</option>
+<option>Sedan - ₹11/km</option>
+<option>SUV - ₹14/km</option>
+<option>Traveller - ₹25-35/km</option>
+</select>
+
+<textarea id="message" placeholder="Additional Message"></textarea>
+
+<button onclick="sendBooking()">Book via WhatsApp</button>
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- VEHICLES -->
+<div class="section">
+<h2>Our Vehicles & Rates</h2>
+
+<div class="vehicle-grid">
+
+<div class="vehicle-card">
+<img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d">
+<h3>Sedan</h3>
+<p>₹11 per KM</p>
+</div>
+
+<div class="vehicle-card">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+<h3>SUV</h3>
+<p>₹14 per KM</p>
+</div>
+
+<div class="vehicle-card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+<h3>Traveller</h3>
+<p>₹25 – ₹35 per KM</p>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+© 2026 CHOUDHARY TOUR AND TRAVELS AGENCY DELHI
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- <script>
+
+// Map Start
+var map = L.map('map').setView([26.9124, 75.7873], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// Pickup marker
+var pickupMarker;
+var dropMarker;
+
+// Live Pickup Location
+navigator.geolocation.getCurrentPosition(function(position) {
+
+var lat = position.coords.latitude;
+var lon = position.coords.longitude;
+
+pickupMarker = L.marker([lat, lon]).addTo(map)
+.bindPopup("Pickup Location")
+.openPopup();
+
+map.setView([lat, lon], 15);
+
+document.getElementById("pickup").value = lat + "," + lon;
+document.getElementById("pickup_lat").value = lat;
+document.getElementById("pickup_lng").value = lon;
+
+});
+
+// Select Drop Location
+map.on('click', function(e){
+
+var lat = e.latlng.lat;
+var lng = e.latlng.lng;
+
+if(dropMarker){
+map.removeLayer(dropMarker);
+}
+
+dropMarker = L.marker([lat, lng]).addTo(map)
+.bindPopup("Drop Location")
+.openPopup();
+
+document.getElementById("drop").value = lat + "," + lng;
+document.getElementById("drop_lat").value = lat;
+document.getElementById("drop_lng").value = lng;
+
+});
+
+// WhatsApp Booking
+function sendBooking(){
+
+let name=document.getElementById("name").value;
+let number=document.getElementById("number").value;
+let pickup=document.getElementById("pickup").value;
+let drop=document.getElementById("drop").value;
+let vehicle=document.getElementById("vehicle").value;
+let message=document.getElementById("message").value;
+
+if(!name || !number || !pickup || !drop || !vehicle){
+alert("Please fill all required fields");
+return;
+}
+
+let text=`New Taxi Booking:
+Name: ${name}
+Contact: ${number}
+Pickup: ${pickup}
+Drop: ${drop}
+Vehicle: ${vehicle}
+Message: ${message}`;
+
+let url="https://wa.me/916376219433?text="+encodeURIComponent(text);
+window.open(url,"_blank");
+}
+
+</script> -->
+<script>
+
+// Map Start
+var map = L.map('map').setView([26.9124, 75.7873], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '© OpenStreetMap'
+}).addTo(map);
+
+var pickupMarker;
+var dropMarker;
+
+// Live Pickup Location
+navigator.geolocation.getCurrentPosition(function(position) {
+
+var lat = position.coords.latitude;
+var lon = position.coords.longitude;
+
+pickupMarker = L.marker([lat, lon]).addTo(map)
+.bindPopup("Pickup Location")
+.openPopup();
+
+map.setView([lat, lon], 15);
+
+});
+
+// Address search function
+async function searchLocation(address, type){
+
+let url = `https://nominatim.openstreetmap.org/search?format=json&q=${address}`;
+
+let response = await fetch(url);
+let data = await response.json();
+
+if(data.length === 0){
+alert("Location not found");
+return;
+}
+
+let lat = data[0].lat;
+let lon = data[0].lon;
+
+map.setView([lat, lon], 14);
+
+if(type === "pickup"){
+
+if(pickupMarker){
+map.removeLayer(pickupMarker);
+}
+
+pickupMarker = L.marker([lat, lon]).addTo(map)
+.bindPopup("Pickup Location")
+.openPopup();
+
+document.getElementById("pickup_lat").value = lat;
+document.getElementById("pickup_lng").value = lon;
+
+}
+
+if(type === "drop"){
+
+if(dropMarker){
+map.removeLayer(dropMarker);
+}
+
+dropMarker = L.marker([lat, lon]).addTo(map)
+.bindPopup("Drop Location")
+.openPopup();
+
+document.getElementById("drop_lat").value = lat;
+document.getElementById("drop_lng").value = lon;
+
+}
+
+}
+
+// Pickup typing
+document.getElementById("pickup").addEventListener("change", function(){
+searchLocation(this.value, "pickup");
+});
+
+// Drop typing
+document.getElementById("drop").addEventListener("change", function(){
+searchLocation(this.value, "drop");
+});
+
+// WhatsApp Booking
+function sendBooking(){
+
+let name=document.getElementById("name").value;
+let number=document.getElementById("number").value;
+let pickup=document.getElementById("pickup").value;
+let drop=document.getElementById("drop").value;
+let vehicle=document.getElementById("vehicle").value;
+let message=document.getElementById("message").value;
+
+if(!name || !number || !pickup || !drop || !vehicle){
+alert("Please fill all required fields");
+return;
+}
+
+let text=`New Taxi Booking:
+Name: ${name}
+Contact: ${number}
+Pickup: ${pickup}
+Drop: ${drop}
+Vehicle: ${vehicle}
+Message: ${message}`;
+
+let url="https://wa.me/916376219433?text="+encodeURIComponent(text);
+window.open(url,"_blank");
+}
+
+</script>
+</body>
+</html>   

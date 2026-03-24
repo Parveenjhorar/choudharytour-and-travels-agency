@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Reviews - CHOUDHARY TOUR AND TRAVELS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#1b1410;
+color:#fff;
+}
+
+/* HEADER */
+
+header{
+background:linear-gradient(90deg,#3b2418,#2a1a12);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 80px;
+}
+
+.logo{
+font-size:26px;
+font-weight:700;
+color:#f4b400;
+}
+
+.logo span{
+color:#fff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#fff;
+transition:0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+color:#f4b400;
+}
+
+/* TITLE */
+
+.page-title{
+text-align:center;
+padding:70px 20px 40px;
+}
+
+.page-title h1{
+font-size:40px;
+}
+
+/* TESTIMONIAL SECTION */
+
+.testimonial-section{
+padding:40px 80px;
+}
+
+.slider{
+display:flex;
+overflow-x:auto;
+scroll-behavior:smooth;
+}
+
+.slider::-webkit-scrollbar{
+display:none;
+}
+
+.testimonial-card{
+min-width:320px;
+background:#2a1f18;
+margin:15px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.testimonial-card:hover{
+transform:translateY(-10px);
+background:#3a2a21;
+}
+
+.stars{
+color:#f4b400;
+margin-bottom:15px;
+font-size:18px;
+}
+
+.testimonial-card p{
+font-size:14px;
+line-height:1.7;
+margin-bottom:15px;
+color:#ddd;
+}
+
+.testimonial-card h3{
+color:#f4b400;
+font-size:16px;
+}
+
+/* GOOGLE REVIEWS */
+
+.google-reviews{
+padding:80px;
+background:#231a14;
+text-align:center;
+}
+
+.google-reviews h2{
+color:#f4b400;
+margin-bottom:40px;
+}
+
+/* FOOTER */
+
+footer{
+background:#2a1f18;
+padding:60px 80px 20px;
+margin-top:80px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-box
+   a{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+width:100%;
+}
+
+
+.footer-box h3{
+color:#f4b400;
+margin-bottom:20px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #444;
+font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:10px;
+padding:15px 20px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.testimonial-section{
+padding:20px;
+}
+
+.google-reviews{
+padding:40px 20px;
+}
+
+.footer-box
+     a{
+color:#aaa;
+text-decoration:none;
+font-size:14px;
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">TravelWith<span>Me</span></div>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="gettaxi.html">GET TAXI</a></li>
+<li><a href="services.html">SERVICES</a></li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="testimonials.html" class="active">REVIEWS</a></li>
+<li><a href="contacts.html">CONTACT</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="page-title">
+<h1>CUSTOMER REVIEWS</h1>
+</div>
+
+<!-- MANUAL REVIEWS -->
+
+<section class="testimonial-section">
+
+<div class="slider" id="slider">
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>Best Delhi taxi service. Driver on time aaya aur journey safe rahi.</p>
+<h3>Rahul Sharma</h3>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>Cab service in Delhi ka best experience mila. Highly recommended.</p>
+<h3>Neha Gupta</h3>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>Jaipur trip bahut smooth rahi. Car clean thi aur driver polite tha.</p>
+<h3>Amit Verma</h3>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>Airport pickup perfect time par hua. Very professional service.</p>
+<h3>Priya Singh</h3>
+</div>
+
+<div class="testimonial-card">
+<div class="stars">★★★★★</div>
+<p>Family trip ke liye best taxi service. Safe aur affordable.</p>
+<h3>Manish Kumar</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- GOOGLE REVIEWS AUTO SHOW -->
+
+<section class="google-reviews">
+
+<h2>Live Google Reviews</h2>
+
+<!-- Replace YOUR_GOOGLE_PLACE_ID -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-YOUR_GOOGLE_PLACE_ID"></div>
+
+</section>
+
+<footer>
+<div class="footer-container">
+
+<div class="footer-box">
+<h3>About Us</h3>
+<p>Choudhary Tour and Travels provides safe, reliable and affordable cab services across India.</p>
+</div>
+
+<div class="footer-box">
+<h3>Quick Links</h3>
+<p><a href="index.html">Home</a></p>
+<p><a href="services.html">Services</a></p>
+<p><a href="gettaxi.html">Book Taxi</a></p>
+<p><a href="contacts.html">Contact</a></p>
+</div>
+
+<div class="footer-box">
+<h3>Contact</h3>
+<p>📞 +91 6376219433 </p>
+<p>📍 Delhi, India</p>
+<p>✉ support@choudharytravels.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 CHOUDHARY TOUR AND TRAVELS | All Rights Reserved
+</div>
+</footer>
+
+<script>
+let slider = document.getElementById('slider');
+
+function nextSlide(){
+slider.scrollBy({left:350,behavior:'smooth'});
+}
+
+function prevSlide(){
+slider.scrollBy({left:-350,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>

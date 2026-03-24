@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - CHOUDHARY TOUR AND TRAVELS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#1b1410;
+color:#fff;
+}
+
+/* HEADER */
+
+header{
+background:#2a1f18;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 80px;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#f4b400;
+}
+
+.logo span{
+color:#fff;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+}
+
+nav ul li{
+margin-left:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#fff;
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover,
+nav ul li .active{
+color:#f4b400;
+}
+
+/* SERVICES */
+
+.services{
+padding:80px;
+text-align:center;
+}
+
+.services h2{
+color:#f4b400;
+margin-bottom:50px;
+font-size:32px;
+}
+
+.service-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.service-box{
+background:#2a1f18;
+padding:30px;
+border-radius:10px;
+width:23%;
+transition:0.3s;
+}
+
+.service-box:hover{
+transform:translateY(-10px);
+background:#3a2a21;
+}
+
+.service-box .icon{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.service-box h3{
+color:#f4b400;
+margin-bottom:15px;
+}
+
+/* POPULAR ROUTES */
+
+.routes{
+padding:80px;
+background:#231a14;
+text-align:center;
+}
+
+.routes h2{
+color:#f4b400;
+margin-bottom:40px;
+font-size:32px;
+}
+
+.routes-list{
+font-size:20px;
+line-height:40px;
+color:#ddd;
+}
+
+.routes-list span{
+color:#f4b400;
+font-weight:600;
+}
+
+.all-india{
+margin-top:20px;
+font-size:22px;
+color:#f4b400;
+font-weight:600;
+}
+
+/* TARIFF */
+
+.tariff{
+padding:80px;
+text-align:center;
+}
+
+.tariff h2{
+color:#f4b400;
+margin-bottom:50px;
+}
+
+.tariff-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.card{
+background:#2a1f18;
+padding:30px;
+border-radius:10px;
+width:23%;
+transition:0.3s;
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:contain;
+}
+
+.card h3{
+margin:20px 0 10px;
+color:#f4b400;
+}
+
+.card h4{
+margin-top:15px;
+font-size:22px;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.highlight{
+border:2px solid #f4b400;
+}
+
+/* FOOTER */
+
+footer{
+background:#2a1f18;
+padding:60px 80px 20px;
+}
+
+.footer-container{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-box{
+width:30%;
+}
+
+.footer-box h3{
+color:#f4b400;
+margin-bottom:20px;
+}
+
+.footer-box a{
+color:#fff;
+text-decoration:none;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #444;
+font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+.service-box,
+.card{
+width:48%;
+}
+}
+
+@media(max-width:600px){
+
+header{
+flex-direction:column;
+text-align:center;
+}
+
+nav ul{
+flex-direction:column;
+margin-top:10px;
+}
+
+nav ul li{
+margin:10px 0;
+}
+
+.service-box,
+.card,
+.footer-box{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">TravelWith<span>Me</span></div>
+
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="gettaxi.html">GET TAXI</a></li>
+<li><a href="services.html" class="active">SERVICES</a></li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="testimonials.html">TESTIMONIALS</a></li>
+<li><a href="contacts.html">CONTACT</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- SERVICES -->
+
+<section class="services">
+<h2>OUR SERVICES</h2>
+
+<div class="service-container">
+
+<div class="service-box">
+<div class="icon">🚖</div>
+<h3>City Taxi Service</h3>
+<p>Comfortable rides anywhere in Delhi NCR.</p>
+</div>
+
+<div class="service-box">
+<div class="icon">🌆</div>
+<h3>Outstation Taxi</h3>
+<p>Travel to any city in India with our reliable cabs.</p>
+</div>
+
+<div class="service-box">
+<div class="icon">✈️</div>
+<h3>Airport Transfer</h3>
+<p>On-time airport pickup and drop service.</p>
+</div>
+
+<div class="service-box">
+<div class="icon">🧳</div>
+<h3>Tour Packages</h3>
+<p>Best travel packages for families and groups.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ROUTES -->
+
+<section class="routes">
+
+<h2>POPULAR ROUTES</h2>
+
+<div class="routes-list">
+Agra, Jaipur, Haridwar, Rishikesh<br>
+Shimla, Manali, Ayodhya, Varanasi<br>
+Amritsar, Udaipur, Jaisalmer
+</div>
+
+<div class="all-india">
++ All India Taxi Service Available
+</div>
+
+</section>
+
+<!-- TARIFF -->
+
+<section class="tariff">
+<h2>SEE OUR TARIFFS</h2>
+
+<div class="tariff-container">
+
+<div class="card">
+<img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Dzire/11387/1758802554630/front-left-side-47.jpg">
+<h3>SEDAN</h3>
+<p>Comfortable city ride</p>
+<h4>Rs.11/km</h4>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIh1rLYxlIYkdPA_WukDdzIaAweJQOQT1rbw&s">
+<h3>ERTIGA</h3>
+<p>Perfect for family trips</p>
+<h4>Rs.14/km</h4>
+</div>
+
+<div class="card highlight">
+<img src="https://static.toyotabharat.com/images/showroom/innova-mmc/unrivaled-upgrades-banner1600x1000.jpg">
+<h3>INNOVA CRYSTA</h3>
+<p>Premium luxury ride</p>
+<h4>Rs.20/km</h4>
+</div>
+
+<div class="card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbTb4kn_8uo1taS4wGhtmHZk8dRxiJc3AM3Q&s">
+<h3>TEMPO TRAVELLER</h3>
+<p>Best for group travel</p>
+<h4>Rs.25/km</h4>
+</div>
+
+</div>
+</section>
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+<h3>About Us</h3>
+<p>Choudhary Tour and Travels provides safe, reliable and affordable cab services across Delhi NCR.</p>
+</div>
+
+<div class="footer-box">
+<h3>Quick Links</h3>
+<p><a href="index.html">Home</a></p>
+<p><a href="gettaxi.html">Get Taxi</a></p>
+<p><a href="services.html">Services</a></p>
+<p><a href="gallery.html">Gallery</a></p>
+<p><a href="contacts.html">Contact</a></p>
+</div>
+
+<div class="footer-box">
+<h3>Contact Info</h3>
+<p>📞 +91 6376219433 </p>
+<p>📍 Delhi, India</p>
+<p>✉ support@choudharytravels.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 CHOUDHARY TOUR AND TRAVELS AGENCY DELHI
+</div>
+
+</footer>
+
+</body>
+</html>

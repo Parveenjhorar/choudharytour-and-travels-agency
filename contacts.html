@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - CHOUDHARY TOUR AND TRAVELS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#1b1410;
+color:#fff;
+}
+
+/* HEADER */
+header{
+background:#2a1f18;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 80px;
+}
+
+.logo{
+font-size:26px;
+font-weight:bold;
+color:#f4b400;
+}
+
+.logo span{
+color:#fff;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul a{
+text-decoration:none;
+color:#fff;
+font-size:14px;
+}
+
+nav ul a:hover,
+nav ul a.active{
+color:#f4b400;
+}
+
+/* TITLE */
+.page-title{
+text-align:center;
+padding:70px 20px 40px;
+}
+
+.page-title h1{
+font-size:42px;
+color:#f4b400;
+}
+
+/* CONTACT SECTION */
+.contact-section{
+display:flex;
+justify-content:space-between;
+padding:40px 80px;
+gap:50px;
+flex-wrap:wrap;
+}
+
+.contact-info{
+flex:1;
+min-width:300px;
+}
+
+.contact-info h2{
+font-size:28px;
+margin-bottom:20px;
+color:#f4b400;
+}
+
+.info-box{
+margin-top:20px;
+}
+
+.info-box p{
+margin-bottom:12px;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 18px;
+background:#25D366;
+color:#fff;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
+}
+
+/* FORM */
+.contact-form{
+flex:1;
+min-width:320px;
+background:#2a1f18;
+padding:35px;
+border-radius:12px;
+}
+
+.contact-form h2{
+margin-bottom:20px;
+color:#f4b400;
+}
+
+.contact-form input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:none;
+border-radius:6px;
+background:#3a2c23;
+color:#fff;
+}
+
+.contact-form button{
+width:100%;
+padding:14px;
+background:#f4b400;
+border:none;
+font-weight:bold;
+cursor:pointer;
+border-radius:6px;
+}
+
+/* MAP */
+.map-section iframe{
+width:100%;
+height:500px;
+border:0;
+margin-top:60px;
+}
+
+/* FOOTER */
+footer{
+background:#2a1f18;
+padding:40px;
+text-align:center;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Choudhary<span>Travels</span></div>
+
+<nav>
+<ul>
+<a href="index.html">Home</a>
+<a href="gettaxi.html">Get Taxi</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="contacts.html" class="active">Contact</a>
+</ul>
+</nav>
+</header>
+
+<div class="page-title">
+<h1>CONTACT & BOOK TAXI</h1>
+</div>
+
+<section class="contact-section">
+
+<div class="contact-info">
+<h2>24/7 Taxi Booking</h2>
+
+<p>Call or WhatsApp us for instant taxi booking.</p>
+
+<div class="info-box">
+<p>📞 Phone: 6376219433</p>
+<p>📍 Uttam Nagar, Delhi</p>
+<p>✉ support@choudharytravels.com</p>
+</div>
+
+<a class="whatsapp-btn" href="https://wa.me/916376219433" target="_blank">
+Chat on WhatsApp
+</a>
+
+</div>
+
+<div class="contact-form">
+<h2>Book Your Taxi</h2>
+
+<form onsubmit="sendBooking(event)">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<input type="text" id="pickup" placeholder="Pickup Location" required>
+
+<input type="text" id="drop" placeholder="Drop Location" required>
+
+<input type="datetime-local" id="datetime" required>
+
+<button type="submit">Book Now</button>
+
+</form>
+</div>
+
+</section>
+
+<section class="map-section">
+<iframe 
+src="https://maps.google.com/maps?q=Uttam%20Nagar%20Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed">
+</iframe>
+</section>
+
+<footer>
+© 2026 CHOUDHARY TOUR AND TRAVELS
+</footer>
+
+<script>
+
+function sendBooking(event){
+
+event.preventDefault();
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let pickup = document.getElementById("pickup").value;
+let drop = document.getElementById("drop").value;
+let datetime = document.getElementById("datetime").value;
+
+let message = `Taxi Booking Request
+Name: ${name}
+Phone: ${phone}
+Pickup: ${pickup}
+Drop: ${drop}
+Date & Time: ${datetime}`;
+
+let url = "https://wa.me/916376219433?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>

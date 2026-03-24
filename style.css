@@ -1,0 +1,82 @@
+body{
+    margin:0;
+    font-family: 'Open Sans', sans-serif;
+    background:#f5f1eb;
+}
+
+.topbar{
+    background:#3e2723;
+    color:white;
+    padding:10px;
+    text-align:center;
+}
+
+.navbar{
+    background:#5d4037;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+.navbar a:hover{
+    color:#ffcc80;
+}
+
+.logo{
+    height:60px;
+}
+
+.hero{
+    background:linear-gradient(rgba(62,39,35,0.7),rgba(62,39,35,0.7)),
+    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
+    background-size:cover;
+    padding:100px 20px;
+    color:white;
+    text-align:center;
+}
+
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    border-left:5px solid #6d4c41;
+}
+
+.btn{
+    background:#6d4c41;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#3e2723;
+}
+
+.footer{
+    background:#3e2723;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+input,textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
