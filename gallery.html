@@ -1,264 +1,225 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery - CHOUDHARY TOUR AND TRAVELS</title>
+
+<title>Gallery - Choudhary Travels</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-background:#1b1410;
-color:#fff;
-}
+body{background:#1b1410;color:#fff;}
 
 /* HEADER */
-
 header{
 background:#2a1f18;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 80px;
+padding:15px 5%;
+flex-wrap:wrap;
+box-shadow:0 4px 15px rgba(0,0,0,0.5);
 }
 
 .logo{
-font-size:28px;
+font-size:22px;
 font-weight:700;
 color:#f4b400;
 }
 
-.logo span{
-color:#fff;
-}
+.logo span{color:#fff;}
 
 nav ul{
-list-style:none;
 display:flex;
-}
-
-nav ul li{
-margin-left:30px;
+flex-wrap:wrap;
+list-style:none;
+gap:15px;
 }
 
 nav ul li a{
 text-decoration:none;
 color:#fff;
-font-weight:500;
+font-size:14px;
 transition:0.3s;
 }
 
 nav ul li a:hover,
-nav ul li .active{
+nav ul li a.active{
 color:#f4b400;
 }
 
-/* VEHICLES SECTION */
-
-.vehicles{
-padding:80px;
+/* SECTION */
+section{
+padding:60px 5%;
 text-align:center;
 }
 
-.vehicles h2{
+h2{
 color:#f4b400;
-margin-bottom:50px;
-font-size:32px;
+margin-bottom:40px;
+font-size:28px;
 }
 
+/* VEHICLE CAR */
 .vehicle-container{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .vehicle-card{
 background:#2a1f18;
-padding:25px;
+padding:15px;
 border-radius:12px;
-transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+transition:0.3s;
+position:relative;
 }
 
 .vehicle-card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 25px rgba(0,0,0,0.6);
+transform:translateY(-8px);
 }
 
-.vehicle-card img{
+/* IMAGE SLIDER */
+.slider{
+position:relative;
+}
+
+.slider img{
 width:100%;
-height:170px;
+height:180px;
 object-fit:cover;
 border-radius:10px;
-margin-bottom:15px;
 }
+
+/* BUTTONS */
+.prev, .next{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:rgba(0,0,0,0.6);
+color:#fff;
+border:none;
+padding:6px 10px;
+cursor:pointer;
+}
+
+.prev{left:5px;}
+.next{right:5px;}
 
 .vehicle-card h3{
 color:#f4b400;
-margin-bottom:10px;
+margin:10px 0;
 }
 
 .vehicle-card p{
 font-size:14px;
-color:#ddd;
+color:#ccc;
 }
 
-/* GALLERY */
-
-.gallery{
-padding:80px;
-text-align:center;
+/* SOCIAL FLOAT */
+.social-float{
+position:fixed;
+right:15px;
+bottom:120px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:1000;
 }
 
-.gallery h2{
-color:#f4b400;
-margin-bottom:50px;
-font-size:32px;
+.social-float a{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+color:white;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+transition:0.3s;
 }
 
-.gallery-container{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.gallery-item{
-position:relative;
-overflow:hidden;
-border-radius:12px;
-cursor:pointer;
-}
-
-.gallery-item img{
-width:100%;
-height:260px;
-object-fit:cover;
-transition:0.5s;
-}
-
-.gallery-item:hover img{
+.social-float a:hover{
 transform:scale(1.1);
 }
 
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-display:flex;
-justify-content:center;
-align-items:center;
-opacity:0;
-transition:0.4s;
-}
-
-.overlay h3{
-color:#f4b400;
-font-size:22px;
-}
-
-.gallery-item:hover .overlay{
-opacity:1;
-}
+/* COLORS */
+.whatsapp{background:#25D366;}
+.instagram{background:#E1306C;}
+.facebook{background:#1877F2;}
 
 /* FOOTER */
-
 footer{
-background:#2a1f18;
-padding:60px 80px 20px;
-margin-top:80px;
+background:#120d0a;
+padding:60px 5% 20px;
+margin-top:50px;
 }
 
 .footer-container{
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:40px;
-}
-
-.footer-box{
-width:30%;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .footer-box h3{
 color:#f4b400;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
+.footer-box p,
 .footer-box a{
-color:#fff;
+font-size:14px;
+color:#bbb;
 text-decoration:none;
+margin-bottom:8px;
+display:block;
+}
+
+.footer-box a:hover{
+color:#f4b400;
 }
 
 .footer-bottom{
 text-align:center;
-margin-top:40px;
-padding-top:20px;
+margin-top:30px;
+padding-top:15px;
 border-top:1px solid #444;
-font-size:14px;
+color:#888;
+font-size:13px;
 }
 
 /* RESPONSIVE */
-
-@media(max-width:1100px){
-.vehicle-container{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:992px){
-.gallery-container{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
 @media(max-width:600px){
+h2{font-size:22px;}
 
-header{
-flex-direction:column;
-text-align:center;
+.social-float{
+right:10px;
+bottom:100px;
 }
 
-nav ul{
-flex-direction:column;
-margin-top:10px;
-}
-
-nav ul li{
-margin:10px 0;
-}
-
-.vehicle-container{
-grid-template-columns:1fr;
-}
-
-.gallery-container{
-grid-template-columns:1fr;
-}
-
-.footer-box{
-width:100%;
+.social-float a{
+width:45px;
+height:45px;
+font-size:20px;
 }
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-<div class="logo">Travel With <span>Me</span></div>
+<div class="logo">Choudhary <span>Travels</span></div>
 
 <nav>
 <ul>
@@ -266,118 +227,142 @@ width:100%;
 <li><a href="gettaxi.html">GET TAXI</a></li>
 <li><a href="services.html">SERVICES</a></li>
 <li><a href="gallery.html" class="active">GALLERY</a></li>
-<li><a href="testimonials.html">TESTIMONIALS</a></li>
-<li><a href="contacts.html">CONTACT</a></li>
+<!-- <li><a href="contacts.html">CONTACT</a></li> -->
+  <li><a href="contact.html">CONTACT</a></li>
 </ul>
 </nav>
 </header>
 
-<!-- OUR VEHICLES -->
-
-<section class="vehicles">
+<!-- VEHICLES -->
+<section>
 <h2>OUR VEHICLES</h2>
 
 <div class="vehicle-container">
 
+<!-- SEDAN -->
 <div class="vehicle-card">
-<img src="https://images.unsplash.com/photo-1722088386522-7cafb8a7e234?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2VkYW4lMjBjYXJ8ZW58MHx8MHx8fDA%3D">
-<h3>Sedan (Dzire / Etios)</h3>
-<p>Comfortable ride for 4 passengers. Best for city and airport travel.</p>
+<div class="slider">
+<img id="sedan" src="sedan.jpeg">
+<button class="prev" onclick="change('sedan',-1)">❮</button>
+<button class="next" onclick="change('sedan',1)">❯</button>
+</div>
+<h3>Sedan</h3>
+<p>Front • Interior • Back View</p>
 </div>
 
+<!-- SUV -->
 <div class="vehicle-card">
-<img src="https://imgcdn.oto.com/large/gallery/roadtest/37/332/suzuki-ertiga-front-side-view-986838.jpg">
-<h3>SUV / Ertiga</h3>
-<p>Perfect for family trips and outstation travel.</p>
+<div class="slider">
+<img id="suv" src="sud.jpeg">
+<button class="prev" onclick="change('suv',-1)">❮</button>
+<button class="next" onclick="change('suv',1)">❯</button>
+</div>
+<h3>SUV</h3>
+<p>Family Comfort • Interior • Exterior</p>
 </div>
 
+<!-- INNOVA -->
 <div class="vehicle-card">
-<img src="https://www.jazzycars.in/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-30-at-3.12.28-PM.jpeg">
+<div class="slider">
+<img id="innova" src="inova.jpeg">
+<button class="prev" onclick="change('innova',-1)">❮</button>
+<button class="next" onclick="change('innova',1)">❯</button>
+</div>
 <h3>Innova</h3>
-<p>Premium travel experience with extra comfort.</p>
+<p>Premium Ride • Luxury Interior</p>
 </div>
 
+<!-- TRAVELLER -->
 <div class="vehicle-card">
-<img src="https://www.maharanacab.com/wp-content/uploads/2020/03/tempo-mh-1-1024x768.jpg">
-<h3>Tempo Traveller</h3>
-<p>Best option for group tours and long trips.</p>
+<div class="slider">
+<img id="tempo" src="tempo.jpeg">
+<button class="prev" onclick="change('tempo',-1)">❮</button>
+<button class="next" onclick="change('tempo',1)">❯</button>
+</div>
+<h3>Traveller</h3>
+<p>Group Travel • Spacious Seating</p>
 </div>
 
 </div>
 </section>
 
-<!-- GALLERY -->
+<!-- SOCIAL ICONS -->
+<div class="social-float">
 
-<section class="gallery">
-<h2>OUR CAR GALLERY</h2>
+<a href="https://wa.me/916376219433" target="_blank" class="whatsapp">💬</a>
 
-<div class="gallery-container">
+<a href="https://www.instagram.com/invites/contact/?igsh=eb4gp9tkajcd&utm_content=10rtyeg9" target="_blank" class="instagram">📸</a>
 
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1502877338535-766e1452684a">
-<div class="overlay"><h3>Luxury Sedan</h3></div>
-</div>
-
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
-<div class="overlay"><h3>Premium SUV</h3></div>
-</div>
-
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1493238792000-8113da705763">
-<div class="overlay"><h3>City Ride</h3></div>
-</div>
-
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
-<div class="overlay"><h3>Family Car</h3></div>
-</div>
-
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def">
-<div class="overlay"><h3>Business Class</h3></div>
-</div>
-
-<div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d">
-<div class="overlay"><h3>Tempo Traveller</h3></div>
-</div>
+<a href="https://www.fb.com/l/6lp1kJRRR" target="_blank" class="facebook">📘</a>
 
 </div>
-</section>
 
+<!-- FOOTER -->
 <footer>
 
 <div class="footer-container">
 
 <div class="footer-box">
 <h3>About Us</h3>
-<p>Choudhary Tour and Travels provides safe, reliable and affordable cab services across Delhi NCR.</p>
+<p>Choudhary Tour & Travels provides safe, reliable and affordable taxi services across Delhi NCR.</p>
 </div>
 
 <div class="footer-box">
 <h3>Quick Links</h3>
-<p><a href="index.html">Home</a></p>
-<p><a href="gettaxi.html">Get Taxi</a></p>
-<p><a href="services.html">Services</a></p>
-<p><a href="gallery.html">Gallery</a></p>
-<p><a href="contacts.html">Contact</a></p>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="gallery.html" class="active">Gallery</a>
+<a href="contacts.html">Contact</a>
+<a href="testinomails.html">Testimonials</a>
 </div>
 
 <div class="footer-box">
 <h3>Contact Info</h3>
-<p>📞 +91 +916376219433 </p>
-<p>📍 Delhi, India</p>
+<p>📞 6376219433</p>
+<p>📍 H. 219 vishwas park ex, Gali. 8 near Dheeraj property, NEW DELHI, 110059</p>
 <p>✉ support@choudharytravels.com</p>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-© 2026 CHOUDHARY TOUR AND TRAVELS AGENCY DELHI
+© 2026 CHOUDHARY TOUR & TRAVELS | All Rights Reserved
 </div>
 
 </footer>
+
+ <script>
+
+let data={
+sedan:[
+"<img src="sedan.jpeg" alt="image">",
+"<img src="sud.jpeg" alt="image">",
+"<img src="sedn.jpeg" alt="image">"
+],
+ 
+suv:[
+"<img src="swift.jpeg" alt="image">",
+"<img src="swiftn.jpeg" alt="image">"
+],
+innova:[
+"<img src="inova.jpeg" alt="image">",
+"<img src="inovan.jpeg" alt="image">"
+],
+tempo:[
+"<img src="tempo.jpeg" alt="image">",
+"<img src="tempon.jpeg" alt="image">"
+]
+};
+
+let index={sedan:0,suv:0,innova:0,tempo:0};
+
+function change(id,step){
+index[id]=(index[id]+step+data[id].length)%data[id].length;
+document.getElementById(id).src=data[id][index[id]];
+}
+
+</script> 
+
 
 </body>
 </html>
